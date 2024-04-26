@@ -46,8 +46,3 @@ if __name__ == "__main__":
         ch4.set(channel_data[3])
         ch5.set(channel_data[4])
         ch6.set(channel_data[5])
-        #time.sleep(1)
-        ##ch1.set()
-        #x = xSub.get()
-        #y = ySub.get()
-        #print(f"X: {x} Y: {y}")
