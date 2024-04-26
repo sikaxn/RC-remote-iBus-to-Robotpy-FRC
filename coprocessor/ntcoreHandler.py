@@ -4,7 +4,7 @@ import ntcore
 import time
 import serial
 import re
-ser = serial.Serial('COM5', 9600) #change this to the serial port pico connected to coprocessor.
+ser = serial.Serial('COM5', 9600)
 
 
 def parse_data(line):
@@ -26,8 +26,14 @@ if __name__ == "__main__":
     ch4 = table.getDoubleTopic("ch4").publish()
     ch5 = table.getDoubleTopic("ch5").publish()
     ch6 = table.getDoubleTopic("ch6").publish()
-    inst.startClient4("example client")
-    inst.setServerTeam(9999) # where TEAM=190, 294, etc, or use inst.setServer("hostname") or similar
+    inst.startClient4("iBusConverter")
+    ch1.set(0)
+    ch2.set(0)
+    ch3.set(0)
+    ch4.set(0)
+    ch5.set(0)
+    ch6.set(0)
+    inst.setServerTeam(9999) # where TEAM=190, 294, etc, or use inst.setServer("127.0.0.1") 
     inst.startDSClient() # recommended if running on DS computer; this gets the robot IP from the DS
     print("started")
     while True:
@@ -46,3 +52,9 @@ if __name__ == "__main__":
         ch4.set(channel_data[3])
         ch5.set(channel_data[4])
         ch6.set(channel_data[5])
+        inst.flush()
+        #time.sleep(1)
+        ##ch1.set()
+        #x = xSub.get()
+        #y = ySub.get()
+        #print(f"X: {x} Y: {y}")
