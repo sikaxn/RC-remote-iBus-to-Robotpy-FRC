@@ -18,6 +18,8 @@ This project Only give you some rough idea. **This could create a run away robot
  - Pico USB to Coprocessor
  - Coprocessor to robot network
 
+It might be possible to hook Pico directly on roboRIO, but my RIO's USB port is full. This would be using a different approach on decoding Serial data directly on roboRIO without using NetworkTables
+
 # Robot still need to be enabled to have motor power output.
 
 Do this with regular DS or use [FakeDS](https://github.com/sikaxn/fakeDS-Python) on coprocessor if you want your robot to be headless. It is strongly recommand to test your robot with regular DS before moving on to FakeDS.
